@@ -49,7 +49,10 @@ public class Window1 extends JFrame implements ActionListener {
 		if (e.getSource()==btnSalir) {
 			dispose();
 		} else {
-			
+			String name=textFieldName.getText();
+			Window2 dialog = new Window2(Window1.this, name);
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
 		}
 	}
 }
