@@ -23,14 +23,14 @@ public class Window3 extends JDialog implements ActionListener {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Gracias por jugar, "+name);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(66, 22, 167, 30);
-		contentPanel.add(lblNewLabel);
+		JLabel lblGreet = new JLabel("Gracias por jugar, "+name);
+		lblGreet.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGreet.setBounds(66, 22, 167, 30);
+		contentPanel.add(lblGreet);
 		
-		JLabel lblNewLabel_1 = new JLabel("Este es el numero de respuestas correctas: "+corrects);
-		lblNewLabel_1.setBounds(47, 52, 227, 30);
-		contentPanel.add(lblNewLabel_1);
+		JLabel lblCorrects = new JLabel("Este es el numero de respuestas correctas: "+corrects);
+		lblCorrects.setBounds(47, 52, 227, 30);
+		contentPanel.add(lblCorrects);
 		
 		btnExit = new JButton("Salir");
 		btnExit.setBounds(106, 93, 89, 23);

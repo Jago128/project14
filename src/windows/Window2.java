@@ -27,7 +27,7 @@ public class Window2 extends JDialog implements ActionListener {
 	public Window2(JFrame window1, String name) {
 		super(window1, true);
 		nameSend=name;
-		setBounds(100, 100, 837, 377);
+		setBounds(100, 100, 529, 246);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -35,28 +35,28 @@ public class Window2 extends JDialog implements ActionListener {
 		{
 			JLabel lblName = new JLabel("Hola, "+name);
 			lblName.setHorizontalAlignment(SwingConstants.CENTER);
-			lblName.setBounds(281, 34, 138, 26);
+			lblName.setBounds(92, 11, 138, 26);
 			contentPanel.add(lblName);
 		}
 
 		rdbtnOption1 = new JRadioButton("Opcion 1");
-		rdbtnOption1.setBounds(263, 130, 109, 23);
+		rdbtnOption1.setBounds(74, 107, 109, 23);
 		contentPanel.add(rdbtnOption1);
 
 		rdbtnOption2 = new JRadioButton("Opcion 2");
-		rdbtnOption2.setBounds(424, 130, 109, 23);
+		rdbtnOption2.setBounds(235, 107, 109, 23);
 		contentPanel.add(rdbtnOption2);
 
 		rdbtnOption3 = new JRadioButton("Opcion 3");
-		rdbtnOption3.setBounds(263, 179, 109, 23);
+		rdbtnOption3.setBounds(74, 156, 109, 23);
 		contentPanel.add(rdbtnOption3);
 
 		rdbtnOption4 = new JRadioButton("Opcion 4");
-		rdbtnOption4.setBounds(424, 179, 109, 23);
+		rdbtnOption4.setBounds(235, 156, 109, 23);
 		contentPanel.add(rdbtnOption4);
 
 		btnCheck = new JButton("Comprobar");
-		btnCheck.setBounds(560, 154, 89, 23);
+		btnCheck.setBounds(371, 131, 89, 23);
 		contentPanel.add(btnCheck);
 
 		lblAnswerValidation = new JLabel("");
@@ -65,12 +65,12 @@ public class Window2 extends JDialog implements ActionListener {
 		contentPanel.add(lblAnswerValidation);
 
 		lblCorrectCount = new JLabel("Numero de respuestas correctas: 0");
-		lblCorrectCount.setBounds(523, 85, 222, 38);
+		lblCorrectCount.setBounds(259, 5, 222, 38);
 		contentPanel.add(lblCorrectCount);
 
 		lblQuestion = new JLabel("[PH]");
 		lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
-		lblQuestion.setBounds(212, 71, 270, 52);
+		lblQuestion.setBounds(29, 48, 457, 52);
 		contentPanel.add(lblQuestion);
 	}
 
