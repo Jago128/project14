@@ -19,6 +19,7 @@ public class Window2 extends JDialog implements ActionListener {
 	private JLabel lblQuestion;
 	private JLabel lblAnswerValidation;
 	private String nameSend;
+	private JButton btnSiguientePregunta;
 
 
 	/**
@@ -44,7 +45,7 @@ public class Window2 extends JDialog implements ActionListener {
 		contentPanel.add(rdbtnOption1);
 
 		rdbtnOption2 = new JRadioButton("Opcion 2");
-		rdbtnOption2.setBounds(235, 107, 109, 23);
+		rdbtnOption2.setBounds(179, 107, 109, 23);
 		contentPanel.add(rdbtnOption2);
 
 		rdbtnOption3 = new JRadioButton("Opcion 3");
@@ -52,11 +53,11 @@ public class Window2 extends JDialog implements ActionListener {
 		contentPanel.add(rdbtnOption3);
 
 		rdbtnOption4 = new JRadioButton("Opcion 4");
-		rdbtnOption4.setBounds(235, 156, 109, 23);
+		rdbtnOption4.setBounds(179, 156, 109, 23);
 		contentPanel.add(rdbtnOption4);
 
 		btnCheck = new JButton("Comprobar");
-		btnCheck.setBounds(371, 131, 89, 23);
+		btnCheck.setBounds(368, 107, 89, 23);
 		contentPanel.add(btnCheck);
 
 		lblAnswerValidation = new JLabel("");
@@ -72,6 +73,10 @@ public class Window2 extends JDialog implements ActionListener {
 		lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
 		lblQuestion.setBounds(29, 48, 457, 52);
 		contentPanel.add(lblQuestion);
+		
+		btnSiguientePregunta = new JButton("Siguiente pregunta");
+		btnSiguientePregunta.setBounds(313, 156, 144, 23);
+		contentPanel.add(btnSiguientePregunta);
 	}
 
 
