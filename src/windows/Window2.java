@@ -100,6 +100,7 @@ public class Window2 extends JDialog implements ActionListener {
 					} else {
 						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 3.");
 					}
+					answered=true;
 					break;
 
 				case 2:
@@ -109,6 +110,7 @@ public class Window2 extends JDialog implements ActionListener {
 					} else {
 						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 4.");
 					}
+					answered=true;
 					break;
 
 				case 3:
@@ -118,6 +120,7 @@ public class Window2 extends JDialog implements ActionListener {
 					} else {
 						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 1.");
 					}
+					answered=true;
 					break;
 
 				case 4:
@@ -127,6 +130,7 @@ public class Window2 extends JDialog implements ActionListener {
 					} else {
 						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 2.");
 					}
+					answered=true;
 					Window3 dialog = new Window3(Window2.this, nameSend, corrects);
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
