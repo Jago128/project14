@@ -73,7 +73,7 @@ public class Window2 extends JDialog implements ActionListener {
 		lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
 		lblQuestion.setBounds(29, 48, 457, 52);
 		contentPanel.add(lblQuestion);
-		
+
 		btnSiguientePregunta = new JButton("Siguiente pregunta");
 		btnSiguientePregunta.setBounds(313, 156, 144, 23);
 		contentPanel.add(btnSiguientePregunta);
@@ -84,75 +84,84 @@ public class Window2 extends JDialog implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int corrects=0, question=1;
 		boolean error=false;
+		boolean answered=false;
 		if (e.getSource()==btnCheck) {
-			do {
-				error=false;
-				if (!rdbtnOption1.isSelected()&&!rdbtnOption2.isSelected()&&!rdbtnOption3.isSelected()&&!rdbtnOption4.isSelected()) {
-					error=true;
-					lblAnswerValidation.setText("No has elegido una opcion.");
-				}
-				if (!error) {
-					switch (question) {
-					case 1:
-						if (rdbtnOption3.isSelected()) {
-							corrects++;
-							lblAnswerValidation.setText("La respuesta elegida es correcta.");
-						} else {
-							lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 3.");
-						}
-						break;
-
-					case 2:
-						lblQuestion.setText("[PH]");
-						rdbtnOption1.setText("[PH] Opcion 1");
-						rdbtnOption2.setText("[PH] Opcion 2");
-						rdbtnOption3.setText("[PH] Opcion 3");
-						rdbtnOption4.setText("[PH] Opcion 4");
-						if (rdbtnOption4.isSelected()) {
-							corrects++;
-							lblAnswerValidation.setText("La respuesta elegida es correcta.");
-						} else {
-							lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 4.");
-						}
-						break;
-
-					case 3:
-						lblQuestion.setText("[PH]");
-						rdbtnOption1.setText("[PH] Opcion 1");
-						rdbtnOption2.setText("[PH] Opcion 2");
-						rdbtnOption3.setText("[PH] Opcion 3");
-						rdbtnOption4.setText("[PH] Opcion 4");
-						if (rdbtnOption1.isSelected()) {
-							corrects++;
-							lblAnswerValidation.setText("La respuesta elegida es correcta.");
-						} else {
-							lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 1.");
-						}
-						break;
-
-					case 4:
-						lblQuestion.setText("[PH]");
-						rdbtnOption1.setText("[PH] Opcion 1");
-						rdbtnOption2.setText("[PH] Opcion 2");
-						rdbtnOption3.setText("[PH] Opcion 3");
-						rdbtnOption4.setText("[PH] Opcion 4");
-						if (rdbtnOption2.isSelected()) {
-							corrects++;
-							lblAnswerValidation.setText("La respuesta elegida es correcta.");
-						} else {
-							lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 2.");
-						}
-						break;
+			error=false;
+			if (!rdbtnOption1.isSelected()&&!rdbtnOption2.isSelected()&&!rdbtnOption3.isSelected()&&!rdbtnOption4.isSelected()) {
+				error=true;
+				lblAnswerValidation.setText("No has elegido una opcion.");
+			}
+			if (!error) {
+				switch (question) {
+				case 1:
+					if (rdbtnOption3.isSelected()) {
+						corrects++;
+						lblAnswerValidation.setText("La respuesta elegida es correcta.");
+					} else {
+						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 3.");
 					}
-					lblCorrectCount.setText("El numero de respuestas correctas son: "+corrects);
-					question++;
-				}
-			} while (question!=4);
+					break;
 
-			if (question==4) {
-				Window3 dialog = new Window3(Window2.this, nameSend, corrects);
-				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-				dialog.setVisible(true);
+				case 2:
+					if (rdbtnOption4.isSelected()) {
+						corrects++;
+						lblAnswerValidation.setText("La respuesta elegida es correcta.");
+					} else {
+						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 4.");
+					}
+					break;
+
+				case 3:
+					if (rdbtnOption1.isSelected()) {
+						corrects++;
+						lblAnswerValidation.setText("La respuesta elegida es correcta.");
+					} else {
+						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 1.");
+					}
+					break;
+
+				case 4:
+					if (rdbtnOption2.isSelected()) {
+						corrects++;
+						lblAnswerValidation.setText("La respuesta elegida es correcta.");
+					} else {
+						lblAnswerValidation.setText("La respuesta elegida es incorrecta. La opcion correcta es [PH]la opcion 2.");
+					}
+					Window3 dialog = new Window3(Window2.this, nameSend, corrects);
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+					break;
+				}
+				lblCorrectCount.setText("El numero de respuestas correctas son: "+corrects);
+			}
+		}
+		if (e.getSource()==btnSiguientePregunta) {
+			question++;
+			answered=false;
+			switch (question) {
+			case 2:
+				lblQuestion.setText("[PH]");
+				rdbtnOption1.setText("[PH] Opcion 1");
+				rdbtnOption2.setText("[PH] Opcion 2");
+				rdbtnOption3.setText("[PH] Opcion 3");
+				rdbtnOption4.setText("[PH] Opcion 4");
+				break;
+
+			case 3:
+				lblQuestion.setText("[PH]");
+				rdbtnOption1.setText("[PH] Opcion 1");
+				rdbtnOption2.setText("[PH] Opcion 2");
+				rdbtnOption3.setText("[PH] Opcion 3");
+				rdbtnOption4.setText("[PH] Opcion 4");
+				break;
+
+			case 4:
+				lblQuestion.setText("[PH]");
+				rdbtnOption1.setText("[PH] Opcion 1");
+				rdbtnOption2.setText("[PH] Opcion 2");
+				rdbtnOption3.setText("[PH] Opcion 3");
+				rdbtnOption4.setText("[PH] Opcion 4");
+				break;
 			}
 		}
 	}
