@@ -91,7 +91,12 @@ public class Window2 extends JDialog implements ActionListener {
 				error=true;
 				lblAnswerValidation.setText("No has elegido una opcion.");
 			}
-			if (!error) {
+
+			if (answered) {
+				lblAnswerValidation.setText("Ya has respondido la pregunta.");
+			}
+
+			if (!error && !answered) {
 				switch (question) {
 				case 1:
 					if (rdbtnOption3.isSelected()) {
@@ -140,32 +145,36 @@ public class Window2 extends JDialog implements ActionListener {
 			}
 		}
 		if (e.getSource()==btnSiguientePregunta) {
-			question++;
-			answered=false;
-			switch (question) {
-			case 2:
-				lblQuestion.setText("[PH]");
-				rdbtnOption1.setText("[PH] Opcion 1");
-				rdbtnOption2.setText("[PH] Opcion 2");
-				rdbtnOption3.setText("[PH] Opcion 3");
-				rdbtnOption4.setText("[PH] Opcion 4");
-				break;
+			if (answered) {
+				question++;
+				answered=false;
+				switch (question) {
+				case 2:
+					lblQuestion.setText("[PH]");
+					rdbtnOption1.setText("[PH] Opcion 1");
+					rdbtnOption2.setText("[PH] Opcion 2");
+					rdbtnOption3.setText("[PH] Opcion 3");
+					rdbtnOption4.setText("[PH] Opcion 4");
+					break;
 
-			case 3:
-				lblQuestion.setText("[PH]");
-				rdbtnOption1.setText("[PH] Opcion 1");
-				rdbtnOption2.setText("[PH] Opcion 2");
-				rdbtnOption3.setText("[PH] Opcion 3");
-				rdbtnOption4.setText("[PH] Opcion 4");
-				break;
+				case 3:
+					lblQuestion.setText("[PH]");
+					rdbtnOption1.setText("[PH] Opcion 1");
+					rdbtnOption2.setText("[PH] Opcion 2");
+					rdbtnOption3.setText("[PH] Opcion 3");
+					rdbtnOption4.setText("[PH] Opcion 4");
+					break;
 
-			case 4:
-				lblQuestion.setText("[PH]");
-				rdbtnOption1.setText("[PH] Opcion 1");
-				rdbtnOption2.setText("[PH] Opcion 2");
-				rdbtnOption3.setText("[PH] Opcion 3");
-				rdbtnOption4.setText("[PH] Opcion 4");
-				break;
+				case 4:
+					lblQuestion.setText("[PH]");
+					rdbtnOption1.setText("[PH] Opcion 1");
+					rdbtnOption2.setText("[PH] Opcion 2");
+					rdbtnOption3.setText("[PH] Opcion 3");
+					rdbtnOption4.setText("[PH] Opcion 4");
+					break;
+				}
+			} else {
+				lblAnswerValidation.setText("No has respondido a la pregunta, pulsa el boton una vez respondido la pregunta.");
 			}
 		}
 	}
