@@ -84,7 +84,6 @@ public class Window2 extends JDialog implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int corrects=0, question=1;
 		boolean error=false;
-		@SuppressWarnings("unused")
 		boolean answered=false;
 		if (e.getSource()==btnCheck) {
 			error=false;
